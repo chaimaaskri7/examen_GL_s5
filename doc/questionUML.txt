@@ -1,2 +1,29 @@
-Ecrire ici votre réponse à la question UML.
 
+- Le premier modèle  utilise l’héritage pour distinguer les événements simples, répétitifs et ceux avec terminaison
+- Le deuxième modèle utilise une seule classe Event et délègue la répétition à une classe Repetition associée, ainsi que la terminaison à une classe Termination il utilise la composition
+
+1er  modèle:
+Avantages:
+  -Plus clair pour représenter trois types d’événements distincts, car chaque classe représente un type métier spécifique
+  - Le comportement de chaque type peut être isolé dans sa propre classe
+Inconvénients:
+-si on veut ajouter un nouveau type d’événement, on doit créer une nouvelle classe
+-On se retrouve vite avec trop de classes, ce qui rend le projet plus difficile à gérer
+-L’héritage peut provoquer des répétitions de code entre les sous-classes
+
+2eme modèle:
+Avantages:
+-Très flexible : un Event peut devenir répétitif juste en lui ajoutant un objet Repetition
+-Pas besoin de créer beaucoup de classes comme avec l’héritage
+-La classe Termination peut servir pour toutes les répétitions
+Inconvénients:
+– L’événement est moins spécialisé donc il faut gérer plus de choses avec des associations
+-On doit passer d’un objet à l’autre (Event -> Repetition -> Termination) ce qui peut rendre le code un peu plus compliqué
+
+
+
+
+
+Le premier modèle convient si on veut considérer chaque type d’événement comme une catégorie séparée dans le code
+Le deuxième modèle est plus flexible et plus facile à faire évoluer. Il suit mieux l’idée que la répétition est juste une caractéristique d’un événement, et pas un type d’événement à part
+->modèle 2 est plus adaptable pour l’avenir
